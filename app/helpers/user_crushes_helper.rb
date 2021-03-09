@@ -1,0 +1,2 @@
+module UserCrushesHelper
+end

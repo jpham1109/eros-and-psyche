@@ -1,0 +1,23 @@
+<h1> Login in to your Eros & Psyches account </h1>
+<hr>
+<main>
+  <p>
+    <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    </ul>
+    <% end %>
+  </p>
+  <p>
+    <%= form_tag @users do %>
+    <%= label_tag :username, "Username" %>
+    <%= text_field_tag :username %><br><br>
+    <%= label_tag :password, "Password" %>
+    <%= password_field_tag :password %><br><br>
+    <%= submit_tag "Login" %>
+    <% end %>
+  </p>
+  <%= link_to "💘 Sign up for an account 💘", new_user_path %>
+</main>

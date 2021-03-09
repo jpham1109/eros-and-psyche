@@ -1,0 +1,24 @@
+<h1> Sign Up!</h1>
+<h2> 💘 Tell us a little about yourself 💘 </h2>
+<main>
+  <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+<hr>
+<p><%= form_for @user do |f| %></p>
+<p><%= f.label :username %>
+   <%= f.text_field :username %></p>
+<p><%= f.label :password %>
+   <%= f.password_field :password %></p>
+<p><%= f.label :password_confirmation %>
+   <%= f.password_field :password_confirmation %></p>
+   <p><%= f.label :dob, "Date of Birth (YYYY-MM-DD)" %>
+   <%= f.text_field :dob %></p>
+<hr>
+<p><%= f.submit "✨ Create your Eros & Psyche account ✨" %></p>
+<% end %>
+</main>

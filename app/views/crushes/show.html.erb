@@ -1,0 +1,18 @@
+<h1> 🦸🏻‍♀️ Your Crush Profile 🦸🏻‍♀️ </h1>
+<main>
+<hr>
+<p><strong> Name: </strong><%= @crush.name %></p><hr>
+<p><strong> DOB: </strong><%= @crush.dob%></p><hr>
+<p><strong> Your Crush's Sign: </strong><%= @data["data"]["result"]["partner"]["Sun Sign"] %></p><hr>
+<p><strong> Symbol: </strong><%= image_tag @data["data"]["result"]["partner"]["Image"] %></p><hr>
+<p><strong> Element: </strong><%= @data["data"]["result"]["partner"]["Element"] %></p><hr>
+<p><strong> Quality: </strong><%= @data["data"]["result"]["partner"]["Quality"] %></p><hr>
+<p><strong> Compatibility: </strong><%= @data["data"]["result"]["Compatibility"]["Heading"] %></p><hr>
+<p><strong> Details: </strong><%= @data["data"]["result"]["Compatibility"]["Details"] %></p><hr>
+
+
+
+<%= link_to "Add to Crushlist", new_user_crush_path(@crush) %><br>
+<%= link_to "See your Crush list", user_crushes_path %><br>
+<%= link_to "Log out", login_path %>
+</main>

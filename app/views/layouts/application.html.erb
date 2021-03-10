@@ -18,6 +18,14 @@
       <% if alert %>
                 <%= alert %>
       <% end %>
+
+      <% if logged_in? %>
+        <p>Logged in as: <%= @current_user %></p>
+        <%= button_to "Logout", "/logout", method: "delete" %>
+      <% else %>
+        <p>You are NOT logged in </p>
+      <%end%>
+
     <%= yield %>
   </body>
 </html>

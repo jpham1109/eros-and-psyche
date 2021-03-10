@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: [:login, :new, :create, :show, :login_helper]
+    skip_before_action :authorized, only: [:login, :handle_login, :new, :create, :show, :login_helper]
 
     def new 
         @user = User.new
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         zodiac = Zodiac.create().user(params[:user][:dob], params[:user][:username])
     
         @user = User.create(username: params[:user][:username], password: params[:user][:password], dob: params[:user][:dob], zodiac: Zodiac.last)
-        byebug
+
         if @user.valid?
             
             flash[:notice] = "Account created successfully!"
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
     end 
 
     def handle_login 
-        byebug
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id 
@@ -36,8 +35,14 @@ class UsersController < ApplicationController
     end 
 
     def show 
-        @user = User.find(params[:user_id])
+        @user = User.find(params[:id])
+        @data = @user.zodiac.user(@user.dob, @user.username)
     end 
+
+    def logout
+        session[:user_id] = nil
+        redirect_to login_path
+      end
 
     private 
 

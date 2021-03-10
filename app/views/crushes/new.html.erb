@@ -1,0 +1,19 @@
+<h2> 💘 Love Calculator 💘 </h2>
+<main>
+  <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+<hr>
+<p><%= form_for @crush do |f| %></p>
+<p><%= f.label :name %>
+   <%= f.text_field :name %></p>
+<p><%= f.label :dob, "Date of Birth (YYYY-MM-DD)" %>
+   <%= f.text_field :dob %></p>
+<hr>
+<p><%= f.submit "✨ Calculate ✨" %></p>
+<% end %>
+</main>

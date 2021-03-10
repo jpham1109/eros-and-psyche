@@ -26,7 +26,7 @@ class Zodiac < ApplicationRecord
 
     end 
 
-    def compatibility
+    def compatibility(user_dob, crush_dob, user, crush)
 
         url = URI("https://astrology-horoscope.p.rapidapi.com/zodiac_compatibility/result/")
 
@@ -38,7 +38,7 @@ class Zodiac < ApplicationRecord
         request["content-type"] = 'application/x-www-form-urlencoded'
         request["x-rapidapi-key"] = 'fd0c5f0f67msh9853b62adb960abp17734bjsn24d6a2dd4c01'
         request["x-rapidapi-host"] = 'astrology-horoscope.p.rapidapi.com'
-        request.body = "mystic_dob=#{@user.dob}&mystic_dob2=#{@crush.dob}&mystic_name=#{@user.username}&mystic_name2=#{@crush.name}"
+        request.body = "mystic_dob=#{user_dob}&mystic_dob2=#{crush_dob}&mystic_name=#{user}&mystic_name2=#{crush}"
 
         response = http.request(request)
         parsed = JSON.parse(response.read_body)

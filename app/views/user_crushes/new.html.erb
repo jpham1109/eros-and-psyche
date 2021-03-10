@@ -1,0 +1,21 @@
+<h1> Add to Crush list!</h1>
+<h2> 💘 How much are we crushing 💘 </h2>
+<main>
+  <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
+<hr>
+<p><%= form_for @user_crush do |f| %></p>
+<p><%= f.label :crush_level %>
+   <%= f.text_field :crush_level %></p>
+<p><%= f.label :crush %>
+   <%= f.collection_select :crush_id,  %></p>
+<hr>
+<p><%= f.submit "✨ Create your Eros & Psyche account ✨" %></p>
+<% end %>
+</main>
+

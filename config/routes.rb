@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get '/new', to: 'users#new', as: 'new_user'
+  # get '/new', to: 'users#new', as: 'new_user'
   get '/login', to: 'users#login', as: 'login'
   post '/login', to: 'users#handle_login'
-  
+  delete '/logout', to: 'users#logout'
+  get 'crushes/:id/user_crushes/new', to: 'user_crushes#new', as: 'new_user_crush'
   resources :user_crushes
   resources :crushes
   resources :users

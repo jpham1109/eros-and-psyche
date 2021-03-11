@@ -1,0 +1,9 @@
+<h1> Your Crush List </h1>
+<main>
+  <ul>
+    <% @user_crushes.each.uniq do |uc|%>
+      <li><%=link_to uc.crush.name, uc.crush %></li>
+    <% end %>
+  </ul>
+  <%= link_to "See your page", @current_user %><br>
+</main>

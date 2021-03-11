@@ -5,19 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-UserCrush.reset_pk_sequence
-User.reset_pk_sequence
-Crush.reset_pk_sequence
-Zodiac.reset_pk_sequence
+
 UserCrush.destroy_all
 User.destroy_all
 Crush.destroy_all
 Zodiac.destroy_all
-require 'pry'
-require 'uri'
-require 'net/http'
-require 'openssl'
-require 'json'
+UserCrush.reset_pk_sequence
+User.reset_pk_sequence
+Crush.reset_pk_sequence
+Zodiac.reset_pk_sequence
+# require 'pry'
+# require 'uri'
+# require 'net/http'
+# require 'openssl'
+# require 'json'
 
 
 
@@ -32,20 +33,20 @@ users.each {|user| User.create(user)}
 
 
 
-url = URI("https://astrology-horoscope.p.rapidapi.com/zodiac_astrology/result/")
+# url = URI("https://astrology-horoscope.p.rapidapi.com/zodiac_astrology/result/")
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-request = Net::HTTP::Post.new(url, 'result' => 'Your Zodiac Details')
-request["content-type"] = 'application/x-www-form-urlencoded'
-request["x-rapidapi-key"] = 'fd0c5f0f67msh9853b62adb960abp17734bjsn24d6a2dd4c01'
-request["x-rapidapi-host"] = 'astrology-horoscope.p.rapidapi.com'
-request.body = "mystic_dob=1987-05-21&mystic_name=John"
+# request = Net::HTTP::Post.new(url, 'result' => 'Your Zodiac Details')
+# request["content-type"] = 'application/x-www-form-urlencoded'
+# request["x-rapidapi-key"] = 'fd0c5f0f67msh9853b62adb960abp17734bjsn24d6a2dd4c01'
+# request["x-rapidapi-host"] = 'astrology-horoscope.p.rapidapi.com'
+# request.body = "mystic_dob=1987-05-21&mystic_name=John"
 
-response = http.request(request)
-parsed = JSON.parse(response.read_body)
+# response = http.request(request)
+# parsed = JSON.parse(response.read_body)
 
 
 

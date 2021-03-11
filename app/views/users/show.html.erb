@@ -3,13 +3,14 @@
 <hr>
 <p><strong> Name: </strong><%= @user.username %></p><hr>
 <p><strong> DOB: </strong><%= @user.dob%></p><hr>
-<p><strong> Your Sun Sign: </strong><%= @data["data"]["result"]["Your Sun Sign"]["Sun Sign"] %></p><hr>
-<p><strong> Symbol: </strong><%= image_tag @data["data"]["result"]["Your Sun Sign"]["Image"] %></p><hr>
-<p><strong> Element: </strong><%= @data["data"]["result"]["Your Zodiac Details"]["Zodiac Element"] %></p><hr>
-<p><strong> Quality: </strong><%= @data["data"]["result"]["Your Zodiac Details"]["Zodiac Quality"] %></p><hr>
-<p><strong> General Traits: </strong><%= @data["data"]["result"]["Traits"]["General Traits"] %></p><hr>
-<p><strong> Famous Personalities: </strong><%= @data["data"]["result"]["Famous Personalities"]%></p><hr>
-<%= link_to "Add a new Crush", new_crush_path %>
-<%= link_to "See your Crush list", crushes_path %>
+<p><strong> Your Sun Sign: </strong><%= @sign %></p><hr>
+<p><strong> Symbol: </strong><%= image_tag @info["data"]["result"]["Your Sun Sign"]["Image"] %></p><hr>
+<p><strong> Element: </strong><%= @element %></p><hr>
+<p><strong> Quality: </strong><%= @quality %></p><hr>
+<p><strong> General Traits: </strong><%= sanitize @traits %></p><hr>
+<p><strong> Famous Personalities: </strong><br><%= sanitize @famous %></p><hr>
+
+<%= link_to "Add a new Crush", new_crush_path %><br>
+<%= link_to "See your Crush list", user_crushes_path %><br>
 <%= link_to "Log out", login_path %>
 </main>

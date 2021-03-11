@@ -1,1 +1,9 @@
-This is your Crush in the List
+<h1> 🦸🏻‍♀️ This is your Crush in the List 🦸🏻‍♀️ </h1>
+<main>
+
+
+
+<%= link_to "See your Crush list", user_crushes_path %><br><br>
+<%= button_to "💁🏻‍♀️✨Delete this Crush ✨💁🏻‍♀️", delete_path(@crush), method: :delete, class: "btn btn-success" %> 
+<%= flash[:message] %>
+</main>

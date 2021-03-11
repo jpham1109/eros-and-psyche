@@ -1,6 +1,6 @@
 class CrushesController < ApplicationController
     def index 
-        @crushes = Crush.all
+        @crushes = Crush.where(friend: true)
     end 
 
     def new 
@@ -42,11 +42,14 @@ class CrushesController < ApplicationController
         @crush = Crush.find(params[:id])
         @crush.update(friend: true)
         flash[:message] = "Added Friendzone!"
-
-
+        redirect_to crushes_path
     end
 
     def destroy 
+        @crush = Crush.find(params[:id])
+        @crush.destroy
+        flash[:message] = "Deleted this Crush, bye bye!"
+        redirect_to user_path(@current_user)
     end 
 
     private 

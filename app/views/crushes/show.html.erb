@@ -13,8 +13,8 @@
 <p><strong> Negative Traits: </strong><%= @negative %></p><hr>
 
 
-<%= link_to "Add to Crushlist", new_user_crush_path(id: @crush.id) %><br>
+<%= link_to "Add to Crushlist", new_user_crush_path %><br>
 <%= link_to "See your Crush list", user_crushes_path %><br>
-<%= button_to "💁🏻‍♀️✨Friendzone this Crush ✨💁🏻‍♀️", friend_path(id: @crush.id), method: :patch %> 
+<%= button_to "💁🏻‍♀️✨Friendzone this Crush ✨💁🏻‍♀️", friend_path(id: @crush.id), method: :patch, class: "btn btn-success" %> 
 <%= flash[:message] %>
 </main>

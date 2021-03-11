@@ -1,0 +1,14 @@
+<h1> Your Friendzone </h1>
+<main>
+  <ul>
+    <% @crushes.each do |crush|%>
+      <li>
+        <%=link_to crush.name, crush %> |||👋🏻👋🏻👋🏻|||   
+        <%= link_to "💁🏻‍♀️✨Delete this person forever ✨💁🏻‍♀️", crush, method: :delete %> 
+      </li>
+
+    <% end %>
+  </ul>
+  <%= link_to "See your page", @current_user %><br>
+  <%= link_to "Add a new Crush", new_crush_path %><br>
+</main>

@@ -2,8 +2,13 @@
 <main>
   <ul>
     <% @user_crushes.each do |uc|%>
-      <li><%=link_to uc.crush.name, uc.crush %></li>
+      <li>
+        <%=link_to uc.crush.name, uc.crush %> |||👋🏻👋🏻👋🏻|||   
+        <%= link_to "💁🏻‍♀️✨Delete this Crush ✨💁🏻‍♀️", uc, method: :delete %> 
+      </li>
+
     <% end %>
   </ul>
   <%= link_to "See your page", @current_user %><br>
+  <%= link_to "Add a new Crush", new_crush_path %><br>
 </main>

@@ -1,16 +1,29 @@
-<h1> Add to Crush list!</h1>
-<h2> 💘 How much are we crushing 💘 </h2>
-<main>
-  <% if @errors %>
-    <%= @errors %>
-  <% end %>
-<hr>
-<p><%= form_for @user_crush do |f| %></p>
-<p><%= f.label :crush_level %>
-   <%= f.number_field :crush_level %></p>
+ <body style="background-color:#ffe3fe;">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <h3 class="text-info mt-4"> Add to Crush list!</h3>
+        <h3 class="text-info"> 💘 How much are we crushing 💘 </h3>
+        <main>
+          <% if @errors %>
+            <%= @errors %>
+          <% end %>
+        <hr>
+        <p><%= form_for @user_crush do |f| %></p>
+        <p><%= f.label :crush_level %>
+          <%= f.number_field :crush_level %></p>
 
-<hr>
-<p><%= f.submit "✨ Add to Crush List ✨" %></p>
-<% end %>
-</main>
+        <hr>
+        <p><%= f.submit "✨ Add to Crush List ✨" %></p>
+        <% end %>
+        <iframe src="http://tallowseclusion.info/asset/fr_gif/folder/gif-coeur-548.gif" width="700" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://tallowseclusion.info/asset/fr_gif/folder/gif-coeur-548.gif">via GIPHY</a></p>
+        </main>
+    </div>
+    <div class="col-md mt-4">
+      <iframe src="https://giphy.com/embed/ZkwbvaFT7ZaAU" width="480" height="221" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/heart-valentines-day-love-ZkwbvaFT7ZaAU">via GIPHY</a></p>
+    </div>
+  </div>
+</div>
+
+
 

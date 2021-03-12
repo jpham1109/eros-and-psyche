@@ -1,19 +1,29 @@
-<h1> Login in to your Eros & Psyches account </h1>
-<hr>
-<main>
-  <p>
-    <% if @errors %>
-        <%= @errors %>
-    <% end %>
-  </p>
-  <p>
-    <%= form_tag @users do %>
-    <%= label_tag :username, "Username" %>
-    <%= text_field_tag :username %><br><br>
-    <%= label_tag :password, "Password" %>
-    <%= password_field_tag :password %><br><br>
-    <%= submit_tag "Login" %>
-    <% end %>
-  </p>
-  <%= link_to "💘 Sign up for an account 💘", new_user_path %>
-</main>
+<body style="background-color:#d6c8ff;">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    <h3 class="text-danger mt-4"> 🌔✨ Get your reading ✨🌖</h3>
+      <p>
+        <% if @errors %>
+            <%= @errors %>
+        <% end %>
+      </p>
+      <p>
+        <%= form_tag @users do %>
+        <%= label_tag :username, "Username" %>
+        <%= text_field_tag :username %><br><br>
+        <%= label_tag :password, "Password" %>
+        <%= password_field_tag :password %><br><br>
+        <%= submit_tag "Login" %>
+        <% end %>
+      </p>
+      <%= link_to "💘 Sign up for an account 💘", new_user_path, class: "btn btn-outline-danger" %>
+    </div>
+   
+    <div class="col-lg mt-4">
+      <img src="/signup.jpeg" alt="Responsive image" width="800" height="480" class="img-rounded">
+    </div>
+  </div>
+</div>
+  
+  

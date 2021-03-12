@@ -17,6 +17,13 @@ ActiveRecord::Schema.define(version: 2021_03_08_222004) do
     t.string "dob"
     t.string "compatibility"
     t.boolean "friend"
+    t.string "sign"
+    t.string "symbol"
+    t.string "element"
+    t.string "quality"
+    t.string "details"
+    t.string "positive"
+    t.string "negative"
     t.integer "zodiac_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,6 +44,11 @@ ActiveRecord::Schema.define(version: 2021_03_08_222004) do
     t.string "username"
     t.string "password_digest"
     t.string "dob"
+    t.string "sign"
+    t.string "element"
+    t.string "quality"
+    t.string "traits"
+    t.string "famous"
     t.integer "zodiac_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

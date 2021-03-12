@@ -1,19 +1,33 @@
-<h2> 💘 Love Calculator 💘 </h2>
+<body style="background-color:#ffe3fe;">
+<div class="container">
+  <div class="row">
+    <h2 class="text-danger mt-4"> 💘 Love Calculator 💘 </h2>
+    <div class="col-sm">
+      <% if @errors %>
+      <ul>
+      <% @errors.each do |error| %>
+          <li><%= error %></li>
+      <% end %>
+      </ul>
+      <% end %>
+<hr>
+      <p><%= form_for @crush do |f| %></p>
+      <p><%= f.label :name, "💖🌚✨Your Crush Name✨🌚💖" %>
+        <%= f.text_field :name %></p>
+      <p><%= f.label :dob, "☀️ Birthday (YYYY-MM-DD)☀️" %>
+        <%= f.text_field :dob %></p>
+      <hr>
+      <p><%= f.submit "✨ Calculate ✨" %></p>
+      <% end %>
+    </div>
+    <div class="col-sm">
+      <iframe src="https://giphy.com/embed/10YK5Hh53nC3dK" width="480" height="331" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/promo-10YK5Hh53nC3dK">via GIPHY</a></p>
+    </div>
+  </div>
+</div>
+
 <main>
-  <% if @errors %>
-    <ul>
-    <% @errors.each do |error| %>
-        <li><%= error %></li>
-    <% end %>
-    </ul>
-  <% end %>
-<hr>
-<p><%= form_for @crush do |f| %></p>
-<p><%= f.label :name %>
-   <%= f.text_field :name %></p>
-<p><%= f.label :dob, "Date of Birth (YYYY-MM-DD)" %>
-   <%= f.text_field :dob %></p>
-<hr>
-<p><%= f.submit "✨ Calculate ✨" %></p>
-<% end %>
+
+
+
 </main>

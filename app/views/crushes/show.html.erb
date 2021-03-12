@@ -1,20 +1,22 @@
-<h1> 🦸🏻‍♀️ Your Crush Profile 🦸🏻‍♀️ </h1>
+<body style="background-color:#FFE3FE;">
+<h1 class="text-info mt-4 text-center" style="border:2px solid Violet;"> ✨🧚🏻🌛 Your Crush Profile 🌜🧚🏼‍♂️✨ </h1>
 <main>
 <hr>
 <p><strong> Name: </strong><%= @crush.name %></p><hr>
 <p><strong> DOB: </strong><%= @crush.dob%></p><hr>
-<p><strong> Your Crush's Sign: </strong><%= @sign %></p><hr>
+<p><strong> Your Crush's Sign: </strong><%= @crush.sign %></p><hr>
 <p><strong> Symbol: </strong><%= image_tag @info["data"]["result"]["partner"]["Image"] %></p><hr>
-<p><strong> Element: </strong><%= @element %></p><hr>
-<p><strong> Quality: </strong><%= @quality %></p><hr>
-<p><strong> Compatibility: </strong><%= @compatibility %></p><hr>
-<p><strong> Details: </strong><%= @details %></p><hr>
-<p><strong> Postive Traits: </strong><%= @positive %></p><hr>
-<p><strong> Negative Traits: </strong><%= @negative %></p><hr>
+<p><strong> Element: </strong><%= @crush.element %></p><hr>
+<p><strong> Quality: </strong><%= @crush.quality %></p><hr>
+<p><strong> Compatibility: </strong><%= @crush.compatibility %></p><hr>
+<p><strong> Compatibility Details: </strong><%= @crush.details %></p><hr>
+<p><strong> Postive Traits of this Crush: </strong><%= @crush.positive %></p><hr>
+<p><strong> Negative Traits of this Crush: </strong><%= @crush.negative %></p><hr>
 
 
-<%= link_to "Add to Crushlist", new_user_crush_path %><br>
-<%= link_to "See your Crush list", user_crushes_path %><br>
-<%= button_to "💁🏻‍♀️✨Friendzone this Crush ✨💁🏻‍♀️", friend_path(id: @crush.id), method: :patch, class: "btn btn-success" %> 
-<%= flash[:message] %>
+<%= link_to "Add to Crushlist", new_user_crush_path, class: "btn btn-outline-primary" %> ✨
+<%= link_to "See your Crush list", user_crushes_path, class: "btn btn-outline-primary" %> ✨
+<%= link_to "💁🏻‍♀️✨Friendzone this Crush ✨💁🏻‍♀️", friend_path(id: @crush.id), method: :patch, class: "btn btn-outline-primary" %><br>
+<%= flash[:message] %><br>
+
 </main>

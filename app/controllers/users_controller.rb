@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
         zodiac = Zodiac.create().user(params[:user][:dob], params[:user][:username])
     
-        @user = User.create(username: params[:user][:username], password: params[:user][:password], dob: params[:user][:dob], zodiac: Zodiac.last)
+        @user = User.create(username: params[:user][:username], password: params[:user][:password], dob: params[:user][:dob], sign: zodiac["data"]["result"]["Your Sun Sign"]["Sun Sign"], element: zodiac["data"]["result"]["Your Zodiac Details"]["Zodiac Element"], quality: zodiac["data"]["result"]["Your Zodiac Details"]["Zodiac Quality"], traits: zodiac["data"]["result"]["Traits"]["General Traits"], famous: zodiac["data"]["result"]["Famous Personalities"], zodiac: Zodiac.last)
 
         if @user.valid?
             session[:user_id] = @user.id 
@@ -41,11 +41,6 @@ class UsersController < ApplicationController
     def show 
         @user = User.find(params[:id])
         @info = @user.zodiac.user(@user.dob, @user.username)
-        @sign = @info["data"]["result"]["Your Sun Sign"]["Sun Sign"]
-        @element = @info["data"]["result"]["Your Zodiac Details"]["Zodiac Element"]
-        @quality = @info["data"]["result"]["Your Zodiac Details"]["Zodiac Quality"]
-        @traits = @info["data"]["result"]["Traits"]["General Traits"]
-        @famous = @info["data"]["result"]["Famous Personalities"]
     end 
 
     def logout

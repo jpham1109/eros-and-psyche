@@ -1,9 +1,21 @@
-<h1> 🦸🏻‍♀️ This is your Crush in the List 🦸🏻‍♀️ </h1>
+<body style="background-color:#AFEEEE;">
+<h2 class="text-danger text-center" style="border:2px solid Pink;"> ✨😻💖 This is the Crush in your Hit 💋List 💖😻✨</h2>
 <main>
+<br>
+<p><strong> Name: </strong><%= @user_crush.crush.name %></p><hr>
+<p><strong> DOB: </strong><%= @user_crush.crush.dob%></p><hr>
+<p><strong> Your Crush's Sign: </strong><%= @user_crush.crush.sign %></p><hr>
+<p><strong> Symbol: </strong><%= image_tag @user_crush.crush.symbol %></p><hr>
+<p><strong> Element: </strong><%= @user_crush.crush.element %></p><hr>
+<p><strong> Quality: </strong><%= @user_crush.crush.quality %></p><hr>
+<p><strong> Compatibility: </strong><%= @user_crush.crush.compatibility %></p><hr>
+<p><strong> Compatibility Details: </strong><%= @user_crush.crush.details %></p><hr>
+<p><strong> Postive Traits of this Crush: </strong><%= @user_crush.crush.positive %></p><hr>
+<p><strong> Negative Traits of this Crush: </strong><%= @user_crush.
+crush.negative %></p><hr>
 
 
-
-<%= link_to "See your Crush list", user_crushes_path %><br><br>
-<%= button_to "💁🏻‍♀️✨Delete this Crush ✨💁🏻‍♀️", delete_path(@crush), method: :delete, class: "btn btn-success" %> 
-<%= flash[:message] %>
+<%= link_to "See your Crush list", user_crushes_path, class: "btn btn-outline-danger" %> 💋
+<%= link_to "See your Friendzone list", crushes_path, class: "btn btn-outline-danger"%> 💋
+<%= link_to "See your page", @current_user, class: "btn btn-outline-danger" %><br><br>
 </main>

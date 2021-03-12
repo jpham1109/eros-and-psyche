@@ -1,6 +1,10 @@
-<h1> Your Friendzone </h1>
-<main>
-  <ul>
+<body style="background-color:#a8d8ea;">
+<div class="container">
+  <div class="row">
+    <h2 class="text-primary mt-4"> 👯‍♂️🚀 Your Friendzone 🍭👯‍♀️ </h2>
+    <div class="col-sm">
+      <hr>
+      <ul>
     <% @crushes.each do |crush|%>
       <li>
         <%=link_to crush.name, crush %> |||👋🏻👋🏻👋🏻|||   
@@ -9,6 +13,13 @@
 
     <% end %>
   </ul>
-  <%= link_to "See your page", @current_user %><br>
-  <%= link_to "Add a new Crush", new_crush_path %><br>
-</main>
+  <hr>
+  <%= link_to "See your page", @current_user, class: "btn btn-outline-danger"%>
+  <%= link_to "See your Crush list", user_crushes_path, class: "btn btn-outline-danger" %>
+  <%= link_to "Add a new Crush", new_crush_path, class: "btn btn-outline-danger" %><br>
+    </div>
+    <div class="col-lg">
+       <iframe src="https://giphy.com/embed/3o7budx9jB1pPWx2VO" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kickingandscreaming-fox-tv-3o7budx9jB1pPWx2VO">via GIPHY</a></p>
+    </div>
+  </div>
+</div>

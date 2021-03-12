@@ -1,14 +1,26 @@
-<h1> Your Crush List </h1>
-<main>
-  <ul>
-    <% @user_crushes.each do |uc|%>
-      <li>
-        <%=link_to uc.crush.name, uc.crush %> |||👋🏻👋🏻👋🏻|||   
-        <%= link_to "💁🏻‍♀️✨Delete this Crush ✨💁🏻‍♀️", uc, method: :delete %> 
-      </li>
+<body style="background-color:#b4aee8;">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+       <h2 class="text-success mt-4"> Your Crush List </h2>
+      <ul>
+        <% @user_crushes.each do |uc|%>
+          <li class="text-success">
+            <%=link_to uc.crush.name, uc %> |||👋🏻👋🏻👋🏻|||   
+            <%= link_to "💁🏻‍♀️✨Delete this Crush ✨💁🏻‍♀️", uc, method: :delete %> 
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "See your page", @current_user, class: "btn btn-outline-success" %>
+      <%= link_to "Add a new Crush", new_crush_path, class: "btn btn-outline-success" %><br>
+    </div>
+    <div class="col-sm mt-2">
+      <iframe src="https://giphy.com/embed/FTpjwECMFpJVS" width="454" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FTpjwECMFpJVS">via GIPHY</a></p>
+    </div>
+  </div>
+</div>
 
-    <% end %>
-  </ul>
-  <%= link_to "See your page", @current_user %><br>
-  <%= link_to "Add a new Crush", new_crush_path %><br>
+<main>
+ 
+   
 </main>

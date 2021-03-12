@@ -1,16 +1,17 @@
-<h1> 💘🏺✨ Your Eros & Psyche Profile ✨🏺🏹 </h1>
+<body style="background-color:#fef0ff;">
+<h2 class="text-info mt-4 text-center" style="border:2px solid Aqua;"> 💘🏺✨ Your Zodiac Profile ✨🏺🏹 </h2>
 <main>
-<hr>
+<br>
 <p><strong> Name: </strong><%= @user.username %></p><hr>
 <p><strong> DOB: </strong><%= @user.dob%></p><hr>
-<p><strong> Your Sun Sign: </strong><%= @sign %></p><hr>
+<p><strong> Your Sun Sign: </strong><%= @user.sign %></p><hr>
 <p><strong> Symbol: </strong><%= image_tag @info["data"]["result"]["Your Sun Sign"]["Image"] %></p><hr>
-<p><strong> Element: </strong><%= @element %></p><hr>
-<p><strong> Quality: </strong><%= @quality %></p><hr>
-<p><strong> General Traits: </strong><%= sanitize @traits %></p><hr>
-<p><strong> Famous Personalities: </strong><br><%= sanitize @famous %></p><hr>
+<p><strong> Element: </strong><%= @user.element %></p><hr>
+<p><strong> Quality: </strong><%= @user.quality %></p><hr>
+<p><strong> General Traits: </strong><%= sanitize @user.traits %></p><hr>
+<p><strong> Famous Personalities: </strong><br><%= sanitize @user.famous %></p><hr>
 
-<%= link_to "Add a new Crush", new_crush_path %><br>
-<%= link_to "See your Crush list", user_crushes_path %><br>
-<%= link_to "See your Friend list", crushes_path %><br>
+<%= link_to "Add a new Crush", new_crush_path, class: "btn btn-outline-info" %> ✨
+<%= link_to "See your Crush list", user_crushes_path, class: "btn btn-outline-info" %> ✨
+<%= link_to "See your Friend list", crushes_path, class: "btn btn-outline-info" %><br><br>
 </main>

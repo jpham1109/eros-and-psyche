@@ -6,4 +6,7 @@ class User < ApplicationRecord
   # validates :username, {presence: true, length: { in: 1..80}}
   # validates :password, {presence: true, length: { in: 1..80}}
   # validates :dob, {presence: true, numericality: true, length: { in: 8..10}}
+  def crush_friended
+    crushes.select{|crush| crush.friend}
+  end
 end

@@ -2,6 +2,7 @@ class UserCrushesController < ApplicationController
 
     def index 
         @user_crushes = @current_user.user_crushes
+        
     end 
 
     def new

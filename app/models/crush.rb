@@ -9,4 +9,5 @@ class Crush < ApplicationRecord
   def set_friend
     self.friend = false if self.friend.nil?
   end
+
 end

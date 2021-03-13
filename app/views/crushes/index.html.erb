@@ -4,15 +4,17 @@
     <h2 class="text-primary mt-4"> 👯‍♂️🚀 Your Friendzone 🍭👯‍♀️ </h2>
     <div class="col-sm">
       <hr>
+      <% if @crushes.empty? %>
+        <p class="text-"> You have not friendzoned any crushes  </p>
+      <% end %>
       <ul>
-    <% @crushes.each do |crush|%>
-      <li>
-        <%=link_to crush.name, crush %> |||👋🏻👋🏻👋🏻|||   
-        <%= link_to "💁🏻‍♀️✨Delete this person forever ✨💁🏻‍♀️", crush, method: :delete %> 
-      </li>
-
-    <% end %>
-  </ul>
+        <% @crushes.each do |crush|%>
+          <li>
+            <%=link_to crush.name, crush %> |||👋🏻👋🏻👋🏻|||   
+            <%= link_to "💁🏻‍♀️✨Delete this person forever ✨💁🏻‍♀️", crush, method: :delete %> 
+          </li>
+        <% end %>
+      </ul>
   <hr>
   <%= link_to "See your page", @current_user, class: "btn btn-outline-danger"%>
   <%= link_to "See your Crush list", user_crushes_path, class: "btn btn-outline-danger" %>

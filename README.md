@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Functioning but unfinish.
+To fix friendzone problem we need to restructure Crush and UserCrush so that Crush display similar attribute with User, plus the compatibility between User and Crush. Meanwhile UserCrush needs to hold the friendzone value (optional: also display the compatibility between the two)

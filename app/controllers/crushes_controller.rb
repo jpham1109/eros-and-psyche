@@ -1,6 +1,6 @@
 class CrushesController < ApplicationController
     def index 
-        @crushes = Crush.where(friend: true)
+        @crushes = @current_user.user_crushes.select{|uc| uc.crush.friend}
     end 
 
     def new 
